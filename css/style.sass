@@ -1,0 +1,374 @@
+@font-face
+  font-family: "FiraSansLight"
+  src: url(../fonts/FiraSansLight.woff), url(../fonts/FiraSansLight.ttf), url(../fonts/FiraSansLight.eot)
+@font-face
+  font-family: "FiraSansMedium"
+  src: url(../fonts/FiraSansMedium.woff), url(../fonts/FiraSansMedium.ttf), url(../fonts/FiraSansMedium.eot)
+@font-face
+  font-family: "FiraSansRegular"
+  src: url(../fonts/FiraSansRegular.woff), url(../fonts/FiraSansRegular.ttf), url(../fonts/FiraSansRegular.eot)
+
+$font_light: "FiraSansLight", sans-serif
+$font_medium: "FiraSansMedium", sans-serif
+$font_regular: "FiraSansRegular", sans-serif
+$font_size: 17px
+$font_color: #111111
+
+$blue: rgb(56, 140, 204)
+$dark_blue: rgb(40, 120, 255)
+$dark_grey: rgb(80, 80, 80)
+$dark_grey_op: rgba(80, 80, 80, 0.35)
+$dark_grey_op_7: rgba(80, 80, 80, 0.7)
+$lighter_grey: rgb(242, 242, 242)
+$lighter_grey_op: rgba(242, 242, 242, 0.35)
+$light_grey: rgb(217, 217, 217)
+$grey: rgb(171, 171, 171)
+$grey_border: rgb(140, 140, 140)
+$white: rgb(255, 255, 255)
+$white_op: rgba(255, 255, 255, 0.35)
+$black: rgb(0, 0, 0)
+$red: rgb(181, 33, 33)
+$red_error: rgb(255, 173, 173)
+
+$media_lg: "(min-width: 1200px)"
+$media_md: "(min-width: 1000px) and (max-width: 1200px)"
+$media_sm: "(min-width: 768px) and (max-width: 1000px)"
+$media_xs: "(max-width: 768px)"
+
+=placeholder()
+  &::-webkit-input-placeholder,
+  &:-ms-input-placeholder,
+  &::-moz-placeholder
+    @content
+
+=button()
+  color: $white
+  background: $blue
+  font-family: $font_medium
+  padding: 10px 30px
+  -webkit-border-radius: 0
+  -moz-border-radius: 0
+  border-radius: 0
+  -webkit-transition: background-color 400ms, box-shadow 400ms
+  -moz-transition: background-color 400ms, box-shadow 400ms
+  -ms-transition: background-color 400ms, box-shadow 400ms
+  -o-transition: background-color 400ms, box-shadow 400ms
+  transition: background-color 400ms, box-shadow 400ms
+  &:hover
+    background: $dark_blue
+    -webkit-box-shadow: 0 0 4px $dark_grey_op_7
+    -moz-box-shadow: 0 0 4px $dark_grey_op_7
+    box-shadow: 0 0 4px $dark_grey_op_7
+
+
+.light
+  font-family: $font_light !important
+.regular
+  font-family: $font_regular !important
+
+@keyframes select_scale
+  0%
+    -webkit-transform: scale(1, 1)
+    -moz-transform: scale(1, 1)
+    -ms-transform: scale(1, 1)
+    -o-transform: scale(1, 1)
+    transform: scale(1, 1)
+  25%
+    -webkit-transform: scale(1.01, 1.01)
+    -moz-transform: scale(1.01, 1.01)
+    -ms-transform: scale(1.01, 1.01)
+    -o-transform: scale(1.01, 1.01)
+    transform: scale(1.01, 1.01)
+  75%
+    -webkit-transform: scale(0.99, 0.99)
+    -moz-transform: scale(0.99, 0.99)
+    -ms-transform: scale(0.99, 0.99)
+    -o-transform: scale(0.99, 0.99)
+    transform: scale(0.99, 0.99)
+  100%
+    -webkit-transform: scale(1, 1)
+    -moz-transform: scale(1, 1)
+    -ms-transform: scale(1, 1)
+    -o-transform: scale(1, 1)
+    transform: scale(1, 1)
+
+@keyframes opacity
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+
+body.preload
+  *
+    -webkit-transition: none !important
+    -moz-transition: none !important
+    -ms-transition: none !important
+    -o-transition: none !important
+    transition: none !important
+
+body
+  font-family: $font_light
+  color: $font_color
+  main
+    .s_order-form
+      padding: 85px 0
+      .f_order-form
+        font-size: $font_size
+        input[type="text"],
+        input[type="email"]
+          -webkit-transition: animation 400ms, background-color 400ms
+          -moz-transition: animation 400ms, background-color 400ms
+          -ms-transition: animation 400ms, background-color 400ms
+          -o-transition: animation 400ms, background-color 400ms
+          transition: animation 400ms, background-color 400ms
+          &:focus
+            -webkit-animation: select_scale 500ms
+            -o-animation: select_scale 500ms
+            animation: select_scale 500ms
+            outline: 0
+        input[type="text"],
+        input[type="email"],
+        select
+          -webkit-border-radius: 0
+          -moz-border-radius: 0
+          border-radius: 0
+          height: auto
+          padding: 8px 12px
+          border: 2px solid $grey
+          margin-bottom: 5px
+          +placeholder()
+          font-size: 17px
+          -webkit-transition: border-color 400ms
+          -moz-transition: border-color 400ms
+          -ms-transition: border-color 400ms
+          -o-transition: border-color 400ms
+          transition: border-color 400ms
+          &:focus
+            outline: 0
+            -webkit-box-shadow: none
+            -moz-box-shadow: none
+            box-shadow: none
+          &:hover
+            border-color: $grey_border
+        select
+          cursor: pointer
+          padding: 7px 12px
+          -webkit-appearance: none
+          -moz-appearance: none
+          appearance: none
+          background: url(../img/form_spr.png) 100% -62px no-repeat
+        input.error
+          border-color: $dark_grey
+          background-color: $red_error
+          -webkit-animation: select_scale 500ms
+          -o-animation: select_scale 500ms
+          animation: select_scale 500ms
+        .error_block
+          width: 370px
+          display: none
+          opacity: 0
+          padding: 22px 30px
+          color: $white
+          background: $red
+          position: absolute
+          left: 100%
+          top: 50%
+          margin-top: -34px
+          -webkit-animation: opacity 500ms forwards
+          -o-animation: opacity 500ms forwards
+          animation: opacity 500ms forwards
+          -webkit-animation-delay: 400ms
+          -moz-animation-delay: 400ms
+          -o-animation-delay: 400ms
+          animation-delay: 400ms
+          .error_block_arrow
+            display: inline-block
+            position: absolute
+            width: 8px
+            height: 15px
+            top: 50%
+            margin-top: -7.5px
+            left: -8px
+            background: url(../img/form_spr.png) 0 -109px no-repeat
+          @media #{$media_sm}
+            position: relative
+            display: none
+            margin: 0
+            left: 0
+            margin-top: 12px
+            width: 100%
+            -webkit-animation: none
+            -o-animation: none
+            animation: none
+            opacity: 1
+            .error_block_arrow
+              margin-top: 0
+              top: -11px
+              left: 50%
+              margin-left: -7.5px
+              -webkit-transform: rotate(90deg)
+              -moz-transform: rotate(90deg)
+              -ms-transform: rotate(90deg)
+              -o-transform: rotate(90deg)
+              transform: rotate(90deg)
+          @media #{$media_xs}
+            position: relative
+            display: none
+            margin: 0
+            left: 0
+            margin-top: 12px
+            width: 100%
+            -webkit-animation: none
+            -o-animation: none
+            animation: none
+            opacity: 1
+            .error_block_arrow
+              margin-top: 0
+              top: -11px
+              left: 50%
+              margin-left: -7.5px
+              -webkit-transform: rotate(90deg)
+              -moz-transform: rotate(90deg)
+              -ms-transform: rotate(90deg)
+              -o-transform: rotate(90deg)
+              transform: rotate(90deg)
+        .span_title,
+        .span_label
+          display: inline-block
+          padding-top: 10px
+          padding-bottom: 5px
+          sup
+            color: $red
+        .span_label
+          font-family: $font_medium
+        .checkbox_label
+          float: left
+          margin: 8px 20px 0 0
+          display: inline-block
+          width: 26px
+          height: 26px
+          background: url(../img/form_spr.png) 0 0 no-repeat
+          cursor: pointer
+          border: 1px solid transparent
+          -webkit-transition: box-shadow 400ms, background 400ms, border-color 400ms
+          -moz-transition: box-shadow 400ms, background 400ms, border-color 400ms
+          -ms-transition: box-shadow 400ms, background 400ms, border-color 400ms
+          -o-transition: box-shadow 400ms, background 400ms, border-color 400ms
+          transition: box-shadow 400ms, background 400ms, border-color 400ms
+          &:hover
+            -webkit-box-shadow: inset 0 0 3px $dark_grey_op
+            -moz-box-shadow: inset 0 0 3px $dark_grey_op
+            box-shadow: inset 0 0 3px $dark_grey_op
+            border-color: $dark_grey_op
+        input[type="checkbox"]
+          display: none
+        input[type="checkbox"]:checked + .checkbox_label
+          background-position: 0 -26px
+          &:hover
+            border-color: $lighter_grey_op
+            -webkit-box-shadow: inset 0 0 5px $white_op
+            -moz-box-shadow: inset 0 0 5px $white_op
+            box-shadow: inset 0 0 5px $white_op
+        fieldset
+          padding-bottom: 25px
+          legend
+            margin-bottom: 15px
+            border: none
+            font-size: $font_size
+            font-family: $font_medium
+            text-transform: uppercase
+        .form_names
+          .last
+            @media #{$media_lg}
+              padding-left: 0
+              margin-left: -17px
+              input
+                width: 105.5%
+            @media #{$media_md}
+              padding-left: 0
+              margin-left: -17px
+              input
+                width: 105.5%
+        .payment_method
+          display: inline-block
+          border: 2px solid $grey
+          input[type="radio"]
+            display: none
+          .radio_label
+            float: left
+            font-family: $font_light
+            font-weight: normal
+            cursor: pointer
+            margin: 0
+            display: inline-block
+            padding: 8px 12px
+            background: $white
+            -webkit-transition: background-color 400ms, color 400ms, opacity 400ms
+            -moz-transition: background-color 400ms, color 400ms, opacity 400ms
+            -ms-transition: background-color 400ms, color 400ms, opacity 400ms
+            -o-transition: background-color 400ms, color 400ms, opacity 400ms
+            transition: background-color 400ms, color 400ms, opacity 400ms
+            &:hover
+              opacity: 0.7
+          input[type="radio"]:checked + .radio_label
+            background: $dark_grey
+            color: $white
+            &:hover
+              opacity: 1
+        .agreement
+          text-decoration: none
+          -webkit-transition: color 400ms
+          -moz-transition: color 400ms
+          -ms-transition: color 400ms
+          -o-transition: color 400ms
+          transition: color 400ms
+        .blue_button
+          +button()
+          margin-bottom: 30px
+        .totals
+          padding: 30px
+          background: url(../img/checkout_bg.png) 0 0 no-repeat
+          -webkit-background-size: 100% 100%
+          background-size: 100% 100%
+          border-top: 3px solid $grey
+          .totals_title
+            font-family: $font_medium
+            font-size: 19px
+            padding-bottom: 20px
+            border-bottom: 2px solid $light_grey
+            margin-bottom: 10px
+          .totals_content
+            margin-bottom: 10px
+            .totals_content-right
+              font-family: $font_medium
+              text-transform: uppercase
+          .totals_checkout
+            font-family: $font_medium
+            margin-top: 5px
+            padding-top: 20px
+            text-transform: uppercase
+            border-top: 2px solid $light_grey
+            padding-bottom: 20px
+          .blue_button
+            margin-bottom: 15px
+          @media (min-width: 1000px) and (max-width: 1200px)
+            font-size: 15px !important
+        @media #{$media_sm}
+          .custom_row
+            margin-left: -15px
+            margin-right: -15px
+            &:after
+              clear: both
+            &:after,
+            &:before
+              display: table
+              content: " "
+          .custom_col-sm-6
+            float: left
+            width: 50%
+            padding-left: 15px
+            padding-right: 15px
+            legend
+              padding-top: 64px
+              visibility: hidden

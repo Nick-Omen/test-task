@@ -1,0 +1,341 @@
+@font-face {
+  font-family: "FiraSansLight";
+  src: url(../fonts/FiraSansLight.woff), url(../fonts/FiraSansLight.ttf), url(../fonts/FiraSansLight.eot); }
+@font-face {
+  font-family: "FiraSansMedium";
+  src: url(../fonts/FiraSansMedium.woff), url(../fonts/FiraSansMedium.ttf), url(../fonts/FiraSansMedium.eot); }
+@font-face {
+  font-family: "FiraSansRegular";
+  src: url(../fonts/FiraSansRegular.woff), url(../fonts/FiraSansRegular.ttf), url(../fonts/FiraSansRegular.eot); }
+.light {
+  font-family: "FiraSansLight", sans-serif !important; }
+
+.regular {
+  font-family: "FiraSansRegular", sans-serif !important; }
+
+@keyframes select_scale {
+  0% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  25% {
+    -webkit-transform: scale(1.01, 1.01);
+    -moz-transform: scale(1.01, 1.01);
+    -ms-transform: scale(1.01, 1.01);
+    -o-transform: scale(1.01, 1.01);
+    transform: scale(1.01, 1.01); }
+  75% {
+    -webkit-transform: scale(0.99, 0.99);
+    -moz-transform: scale(0.99, 0.99);
+    -ms-transform: scale(0.99, 0.99);
+    -o-transform: scale(0.99, 0.99);
+    transform: scale(0.99, 0.99); }
+  100% {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1); } }
+@keyframes opacity {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+body.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important; }
+
+body {
+  font-family: "FiraSansLight", sans-serif;
+  color: #111111; }
+  body main .s_order-form {
+    padding: 85px 0; }
+    body main .s_order-form .f_order-form {
+      font-size: 17px; }
+      body main .s_order-form .f_order-form input[type="text"],
+      body main .s_order-form .f_order-form input[type="email"] {
+        -webkit-transition: animation 400ms, background-color 400ms;
+        -moz-transition: animation 400ms, background-color 400ms;
+        -ms-transition: animation 400ms, background-color 400ms;
+        -o-transition: animation 400ms, background-color 400ms;
+        transition: animation 400ms, background-color 400ms; }
+        body main .s_order-form .f_order-form input[type="text"]:focus,
+        body main .s_order-form .f_order-form input[type="email"]:focus {
+          -webkit-animation: select_scale 500ms;
+          -o-animation: select_scale 500ms;
+          animation: select_scale 500ms;
+          outline: 0; }
+      body main .s_order-form .f_order-form input[type="text"],
+      body main .s_order-form .f_order-form input[type="email"],
+      body main .s_order-form .f_order-form select {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        height: auto;
+        padding: 8px 12px;
+        border: 2px solid #ababab;
+        margin-bottom: 5px;
+        font-size: 17px;
+        -webkit-transition: border-color 400ms;
+        -moz-transition: border-color 400ms;
+        -ms-transition: border-color 400ms;
+        -o-transition: border-color 400ms;
+        transition: border-color 400ms; }
+        body main .s_order-form .f_order-form input[type="text"]:focus,
+        body main .s_order-form .f_order-form input[type="email"]:focus,
+        body main .s_order-form .f_order-form select:focus {
+          outline: 0;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none; }
+        body main .s_order-form .f_order-form input[type="text"]:hover,
+        body main .s_order-form .f_order-form input[type="email"]:hover,
+        body main .s_order-form .f_order-form select:hover {
+          border-color: #8c8c8c; }
+      body main .s_order-form .f_order-form select {
+        cursor: pointer;
+        padding: 7px 12px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url(../img/form_spr.png) 100% -62px no-repeat; }
+      body main .s_order-form .f_order-form input.error {
+        border-color: #505050;
+        background-color: #ffadad;
+        -webkit-animation: select_scale 500ms;
+        -o-animation: select_scale 500ms;
+        animation: select_scale 500ms; }
+      body main .s_order-form .f_order-form .error_block {
+        width: 370px;
+        display: none;
+        opacity: 0;
+        padding: 22px 30px;
+        color: white;
+        background: #b52121;
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        margin-top: -34px;
+        -webkit-animation: opacity 500ms forwards;
+        -o-animation: opacity 500ms forwards;
+        animation: opacity 500ms forwards;
+        -webkit-animation-delay: 400ms;
+        -moz-animation-delay: 400ms;
+        -o-animation-delay: 400ms;
+        animation-delay: 400ms; }
+        body main .s_order-form .f_order-form .error_block .error_block_arrow {
+          display: inline-block;
+          position: absolute;
+          width: 8px;
+          height: 15px;
+          top: 50%;
+          margin-top: -7.5px;
+          left: -8px;
+          background: url(../img/form_spr.png) 0 -109px no-repeat; }
+        @media (min-width: 768px) and (max-width: 1000px) {
+          body main .s_order-form .f_order-form .error_block {
+            position: relative;
+            display: none;
+            margin: 0;
+            left: 0;
+            margin-top: 12px;
+            width: 100%;
+            -webkit-animation: none;
+            -o-animation: none;
+            animation: none;
+            opacity: 1; }
+            body main .s_order-form .f_order-form .error_block .error_block_arrow {
+              margin-top: 0;
+              top: -11px;
+              left: 50%;
+              margin-left: -7.5px;
+              -webkit-transform: rotate(90deg);
+              -moz-transform: rotate(90deg);
+              -ms-transform: rotate(90deg);
+              -o-transform: rotate(90deg);
+              transform: rotate(90deg); } }
+        @media (max-width: 768px) {
+          body main .s_order-form .f_order-form .error_block {
+            position: relative;
+            display: none;
+            margin: 0;
+            left: 0;
+            margin-top: 12px;
+            width: 100%;
+            -webkit-animation: none;
+            -o-animation: none;
+            animation: none;
+            opacity: 1; }
+            body main .s_order-form .f_order-form .error_block .error_block_arrow {
+              margin-top: 0;
+              top: -11px;
+              left: 50%;
+              margin-left: -7.5px;
+              -webkit-transform: rotate(90deg);
+              -moz-transform: rotate(90deg);
+              -ms-transform: rotate(90deg);
+              -o-transform: rotate(90deg);
+              transform: rotate(90deg); } }
+      body main .s_order-form .f_order-form .span_title,
+      body main .s_order-form .f_order-form .span_label {
+        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 5px; }
+        body main .s_order-form .f_order-form .span_title sup,
+        body main .s_order-form .f_order-form .span_label sup {
+          color: #b52121; }
+      body main .s_order-form .f_order-form .span_label {
+        font-family: "FiraSansMedium", sans-serif; }
+      body main .s_order-form .f_order-form .checkbox_label {
+        float: left;
+        margin: 8px 20px 0 0;
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        background: url(../img/form_spr.png) 0 0 no-repeat;
+        cursor: pointer;
+        border: 1px solid transparent;
+        -webkit-transition: box-shadow 400ms, background 400ms, border-color 400ms;
+        -moz-transition: box-shadow 400ms, background 400ms, border-color 400ms;
+        -ms-transition: box-shadow 400ms, background 400ms, border-color 400ms;
+        -o-transition: box-shadow 400ms, background 400ms, border-color 400ms;
+        transition: box-shadow 400ms, background 400ms, border-color 400ms; }
+        body main .s_order-form .f_order-form .checkbox_label:hover {
+          -webkit-box-shadow: inset 0 0 3px rgba(80, 80, 80, 0.35);
+          -moz-box-shadow: inset 0 0 3px rgba(80, 80, 80, 0.35);
+          box-shadow: inset 0 0 3px rgba(80, 80, 80, 0.35);
+          border-color: rgba(80, 80, 80, 0.35); }
+      body main .s_order-form .f_order-form input[type="checkbox"] {
+        display: none; }
+      body main .s_order-form .f_order-form input[type="checkbox"]:checked + .checkbox_label {
+        background-position: 0 -26px; }
+        body main .s_order-form .f_order-form input[type="checkbox"]:checked + .checkbox_label:hover {
+          border-color: rgba(242, 242, 242, 0.35);
+          -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.35);
+          -moz-box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.35);
+          box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.35); }
+      body main .s_order-form .f_order-form fieldset {
+        padding-bottom: 25px; }
+        body main .s_order-form .f_order-form fieldset legend {
+          margin-bottom: 15px;
+          border: none;
+          font-size: 17px;
+          font-family: "FiraSansMedium", sans-serif;
+          text-transform: uppercase; }
+      @media (min-width: 1200px) {
+        body main .s_order-form .f_order-form .form_names .last {
+          padding-left: 0;
+          margin-left: -17px; }
+          body main .s_order-form .f_order-form .form_names .last input {
+            width: 105.5%; } }
+      @media (min-width: 1000px) and (max-width: 1200px) {
+        body main .s_order-form .f_order-form .form_names .last {
+          padding-left: 0;
+          margin-left: -17px; }
+          body main .s_order-form .f_order-form .form_names .last input {
+            width: 105.5%; } }
+      body main .s_order-form .f_order-form .payment_method {
+        display: inline-block;
+        border: 2px solid #ababab; }
+        body main .s_order-form .f_order-form .payment_method input[type="radio"] {
+          display: none; }
+        body main .s_order-form .f_order-form .payment_method .radio_label {
+          float: left;
+          font-family: "FiraSansLight", sans-serif;
+          font-weight: normal;
+          cursor: pointer;
+          margin: 0;
+          display: inline-block;
+          padding: 8px 12px;
+          background: white;
+          -webkit-transition: background-color 400ms, color 400ms, opacity 400ms;
+          -moz-transition: background-color 400ms, color 400ms, opacity 400ms;
+          -ms-transition: background-color 400ms, color 400ms, opacity 400ms;
+          -o-transition: background-color 400ms, color 400ms, opacity 400ms;
+          transition: background-color 400ms, color 400ms, opacity 400ms; }
+          body main .s_order-form .f_order-form .payment_method .radio_label:hover {
+            opacity: 0.7; }
+        body main .s_order-form .f_order-form .payment_method input[type="radio"]:checked + .radio_label {
+          background: #505050;
+          color: white; }
+          body main .s_order-form .f_order-form .payment_method input[type="radio"]:checked + .radio_label:hover {
+            opacity: 1; }
+      body main .s_order-form .f_order-form .agreement {
+        text-decoration: none;
+        -webkit-transition: color 400ms;
+        -moz-transition: color 400ms;
+        -ms-transition: color 400ms;
+        -o-transition: color 400ms;
+        transition: color 400ms; }
+      body main .s_order-form .f_order-form .blue_button {
+        color: white;
+        background: #388ccc;
+        font-family: "FiraSansMedium", sans-serif;
+        padding: 10px 30px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-transition: background-color 400ms, box-shadow 400ms;
+        -moz-transition: background-color 400ms, box-shadow 400ms;
+        -ms-transition: background-color 400ms, box-shadow 400ms;
+        -o-transition: background-color 400ms, box-shadow 400ms;
+        transition: background-color 400ms, box-shadow 400ms;
+        margin-bottom: 30px; }
+        body main .s_order-form .f_order-form .blue_button:hover {
+          background: #2878ff;
+          -webkit-box-shadow: 0 0 4px rgba(80, 80, 80, 0.7);
+          -moz-box-shadow: 0 0 4px rgba(80, 80, 80, 0.7);
+          box-shadow: 0 0 4px rgba(80, 80, 80, 0.7); }
+      body main .s_order-form .f_order-form .totals {
+        padding: 30px;
+        background: url(../img/checkout_bg.png) 0 0 no-repeat;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        border-top: 3px solid #ababab; }
+        body main .s_order-form .f_order-form .totals .totals_title {
+          font-family: "FiraSansMedium", sans-serif;
+          font-size: 19px;
+          padding-bottom: 20px;
+          border-bottom: 2px solid #d9d9d9;
+          margin-bottom: 10px; }
+        body main .s_order-form .f_order-form .totals .totals_content {
+          margin-bottom: 10px; }
+          body main .s_order-form .f_order-form .totals .totals_content .totals_content-right {
+            font-family: "FiraSansMedium", sans-serif;
+            text-transform: uppercase; }
+        body main .s_order-form .f_order-form .totals .totals_checkout {
+          font-family: "FiraSansMedium", sans-serif;
+          margin-top: 5px;
+          padding-top: 20px;
+          text-transform: uppercase;
+          border-top: 2px solid #d9d9d9;
+          padding-bottom: 20px; }
+        body main .s_order-form .f_order-form .totals .blue_button {
+          margin-bottom: 15px; }
+        @media (min-width: 1000px) and (max-width: 1200px) {
+          body main .s_order-form .f_order-form .totals {
+            font-size: 15px !important; } }
+      @media (min-width: 768px) and (max-width: 1000px) {
+        body main .s_order-form .f_order-form .custom_row {
+          margin-left: -15px;
+          margin-right: -15px; }
+          body main .s_order-form .f_order-form .custom_row:after {
+            clear: both; }
+          body main .s_order-form .f_order-form .custom_row:after, body main .s_order-form .f_order-form .custom_row:before {
+            display: table;
+            content: " "; }
+        body main .s_order-form .f_order-form .custom_col-sm-6 {
+          float: left;
+          width: 50%;
+          padding-left: 15px;
+          padding-right: 15px; }
+          body main .s_order-form .f_order-form .custom_col-sm-6 legend {
+            padding-top: 64px;
+            visibility: hidden; } }
+
+/*# sourceMappingURL=style.css.map */

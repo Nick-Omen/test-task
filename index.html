@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>Test Task by Nikita Nikitin</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="preload">
+
+<main>
+    <section class="s_order-form">
+        <div class="container">
+            <form method="get" class="row f_order-form">
+                <div class="col-md-8">
+                    <div class="custom_row">
+                        <fieldset class="custom_col-sm-6">
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <span class="span_title">Product</span>
+                                </div>
+                                <div class="col-md-7 col-lg-5">
+                                    <select class="form-control">
+                                        <option value="1">GoPro Session Camera</option>
+                                        <option value="2">GoPro 2 Session Camera</option>
+                                        <option value="3">GoPro 3 Session Camera</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <span class="span_title">Product price</span>
+                                </div>
+                                <div class="col-md-7 col-lg-5">
+                                    <input id="checkbox_11" type="checkbox"/>
+                                    <label for="checkbox_11" class="checkbox_label"></label><span class="span_label">399.99 USD</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <span class="span_title">Mobile Apps</span>
+                                </div>
+                                <div class="col-md-7 col-lg-5">
+                                    <input id="checkbox_12" type="checkbox"/>
+                                    <label for="checkbox_12" class="checkbox_label"></label><span
+                                        class="span_label">FREE</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="custom_col-sm-6 acc_block">
+                            <legend>accessories</legend>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <span class="span_title">Smart Remote</span>
+                                </div>
+                                <div class="col-md-7 col-lg-5">
+                                    <input id="checkbox_1" type="checkbox"/>
+                                    <label for="checkbox_1" class="checkbox_label"></label><span class="span_label">79.99 USD</span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <span class="span_title">Auto Charger</span>
+                                </div>
+                                <div class="col-md-7 col-lg-5">
+                                    <input id="checkbox_2" type="checkbox"/>
+                                    <label for="checkbox_2" class="checkbox_label"></label><span class="span_label">29.99 USD</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <fieldset>
+                        <legend>customer details</legend>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <span class="span_title">Name <sup>*</sup></span>
+                            </div>
+                            <div class="col-md-9 form_names">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input placeholder="First" class="form-control" type="text"/>
+                                    </div>
+                                    <div class="col-sm-6 last">
+                                        <input placeholder="Last" class="form-control" type="text"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3 col-sm-4">
+                                <span class="span_title">E-mail <sup>*</sup></span>
+                            </div>
+                            <div class="col-md-6 col-sm-8">
+                                <input placeholder="email@example.com" id="email" class="form-control" type="email"/>
+                                <span class="error_block">
+                                    Make sure you enter valid email address
+                                    <span class="error_block_arrow"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3 col-sm-4">
+                                <span class="span_title">Country <sup>*</sup></span>
+                            </div>
+                            <div class="col-md-7 col-lg-5 col-sm-8">
+                                <select class="form-control">
+                                    <option selected disabled>Select</option>
+                                    <option value="1">Kyrgyzstan</option>
+                                    <option value="2">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3 col-lg-3 col-sm-4">
+                                <span class="span_title">Payment Method</span>
+                            </div>
+                            <div class="col-md-9 col-sm-8">
+                                <span class="payment_method">
+                                    <input id="paypal" name="pay_method" type="radio" checked/>
+                                    <label class="radio_label" for="paypal">Credit Card</label>
+                                    <input id="credit" name="pay_method" type="radio"/>
+                                    <label class="radio_label" for="credit">PayPal/Credit Card</label>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-offset-3 col-md-9 col-sm-offset-4 col-sm-8">
+                                <input id="checkbox_4" type="checkbox"/>
+                                <label for="checkbox_4" class="checkbox_label"></label><span class="span_label light">I accept <a
+                                    class="regular agreement" href="#">End
+                                User License Agreement</a></span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-3 col-sm-offset-4 col-sm-8">
+                            <button class="btn blue_button" type="submit">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="totals">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="totals_title">My Order</div>
+                            </div>
+                        </div>
+                        <div class="row totals_content">
+                            <div class="col-xs-7">Product Sub-total</div>
+                            <div class="col-xs-5 text-right totals_content-right">399.99 USD</div>
+                        </div>
+                        <div class="row totals_content">
+                            <div class="col-xs-7">Mobile Apps</div>
+                            <div class="col-xs-5 text-right totals_content-right">Free</div>
+                        </div>
+                        <div class="row totals_content">
+                            <div class="col-xs-7">Auto Charger</div>
+                            <div class="col-xs-5 text-right totals_content-right">-</div>
+                        </div>
+                        <div class="row totals_content">
+                            <div class="col-xs-7">Smart Remote</div>
+                            <div class="col-xs-5 text-right totals_content-right">79.99 USD</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="totals_checkout">
+                                    <div class="row">
+                                        <div class="col-xs-7">Total</div>
+                                        <div class="col-xs-5 text-right">479.98 USD</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 text-right">
+                                <button class="btn blue_button">Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('body').removeClass('preload');
+
+        $('form').on('submit', function(e){
+            e.preventDefault();
+            $('#email').addClass('error').closest('.form-group')
+                    .find('.error_block').show(0);
+        });
+    });
+</script>
+
+</body>
+</html>
